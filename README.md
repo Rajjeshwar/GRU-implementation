@@ -93,7 +93,6 @@ i will not say you speak to me
  conda install -c conda-forge jupyterlab
  jupyter-lab
  #open Shakespeare_text_generator_using_GRU.ipynb
-
  ```
  
  
@@ -103,8 +102,6 @@ i will not say you speak to me
  
  ```
  black  shakespeare_text_generator_using_gru.py
-
- 
  ```
  
  If you would like to replace the dataset, just replace the text. I would NOT recommend NLP processing in this sort of a problem where you remove stop words, URLs, etc as we do not want incorrect semantics to be learned. 
