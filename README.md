@@ -52,12 +52,12 @@ We can use this new hidden state as our output for that time step as well by pas
 
 ## Design decisions:
 
-1. For optimization, we used a standard ADAM optimizer, which works on the intuition on RMS prop + two beta values. 
-2. Weights have been initialized using the Xavier GLOROT scheme. I tried random weights too, but the loss didn't decrease. So only GLOROT worked. 
-3. Cross Entropy Loss is used, and perplexity is used just as a metric (not for ADAM optimization).
-4. We reset the gradients before each backpropagation step (akin to `torch.zero_grad()`). 
-5. In forward, we set the forget gate as `f_t = np.ones(i_t.shape) - i_t`.
-6. Gradients are clipped to avoid exploding gradient issues that can incur very large updates to neural network weights. 
+1. We remove the new line markers during pre-processing. `response.text.split("\n")[0:]`
+2. Followed by this, we remove the punctuation from the corpus to prepare for tokenization. `str.maketrans("", "", string.punctuation)`
+3. For optimization, we used a standard ADAM optimizer, which works on the intuition on RMS prop + two beta values. 
+4. Weights have been initialized using the Xavier GLOROT scheme. I tried random weights too, but the loss didn't decrease. So only GLOROT worked. 
+5. Cross Entropy Loss is used, and perplexity is used just as a metric (not for ADAM optimization).
+6. We find that after 100 epochs with the current layer we obtain a perplexity of _12.249737_. `np.min(train_perplexity)`
 
 ## Evaluation: 
 
