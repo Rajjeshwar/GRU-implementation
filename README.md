@@ -92,7 +92,8 @@ i will not say you speak to me
  ```
  conda install -c conda-forge jupyterlab
  jupyter-lab
- #open driverNotebook.ipynb
+ #open Shakespeare_text_generator_using_GRU.ipynb
+
  ```
  
  
